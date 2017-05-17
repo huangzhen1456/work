@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="/static/css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/garden.js"></script>
+    <script type="text/javascript" src="/static/js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">在很久很久以前。</span><br />
+				<span class="space"/><span class="comments">世界的中心栽着一棵黄桃树，</span><br />
+				<span class="space"/><span class="comments">树下坐着一个叫兜兜的小伙子，</span><br />
+				<span class="space"/><span class="comments">他每天呆呆地，傻傻地等待着什么。。。</span><br />
+				<br />
+				<span class="space"/>突然有一天，<br />
+				<span class="space"/>有只叫"领导"的小白兔出现了，<br />
+				<span class="space"/>它是世界上最美丽，最可爱的，一蹦一跳跑了过来~<br />
+				<span class="space"/>眼看就要跑到了树下，听到“咚”得一声。。<br />
+				<span class="space"/>哈哈它撞歪了！没有撞到树干上，却撞进了兜兜的怀里<br />
+				<span class="space"/>于是兜兜抱着领导过上了幸福快乐的生活~<br />
+				<span class="space"/>永不分开。。。<br />
+				<span class="space"/>~~~故事讲完啦~~~<br />
+				<span class="space"/>但是接下来，想说几句话呢。<br />
+				<br />
+				<span class="keyword">我爱你，余怡菁<br />
+				<span class="space"/>我会牵着你的手，走到我们满头白发的那一天，<br />
+				<span class="space"/>我会守护你生命里的精彩，陪你闹陪你笑，<br />
+				<span class="space"/>我愿意为你去做每一件能让你开心快乐的事。<br />
+				<span class="space"/>所有我们经历的点点滴滴，<br />都是我们一辈子最美的回忆。</span> <br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						领导,我爱你！
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- 兜兜</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 2, 24);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "浏览器版本过低，不支持HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			timeElapse(together);
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 1);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 1);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
