@@ -9,7 +9,7 @@
 				border: 6, // border arround the image
 				perspective: 250, // perpective height
 				minScale: 0.2, // minimum scale for the image in the back
-				duration: 800, // aimation duration
+				duration: 500, // aimation duration
 				loadingClass: null, // CSS class applied to the element while looading images
 				before: function(){return false},
 				after: function(){return false}
