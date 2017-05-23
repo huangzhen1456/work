@@ -22,3 +22,11 @@ class LoveHandler(tornado.web.RequestHandler):
         }
         self.render('../static/templates/love.html', items=items)
 
+
+class LoveBookHandler(tornado.web.RequestHandler):
+    #520book
+    def get(self):
+        items = {
+
+        }
+        self.render('../static/templates/lovebook.html', items=items)

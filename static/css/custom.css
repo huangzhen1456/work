@@ -1,0 +1,11 @@
+#myGallery {
+	width: 100%;
+	height: 106rem;
+}
+#myGallery img {
+	border: 2px solid #52697E;
+    zoom: 1;
+}
+a.loading {
+	background: #fff url(../img/ajax_small.gif) no-repeat center;
+}
