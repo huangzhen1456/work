@@ -30,3 +30,12 @@ class LoveBookHandler(tornado.web.RequestHandler):
 
         }
         self.render('../static/templates/lovebook.html', items=items)
+
+
+class DanMuHandler(tornado.web.RequestHandler):
+    #520book
+    def get(self):
+        items = {
+
+        }
+        self.render('../static/templates/danmu.html', items=items)

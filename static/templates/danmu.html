@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>弹幕演示</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=1200, user-scalable=no" />
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+		#danmu{
+			background-color: #000;
+			opacity: 0.4;
+		}
+		#zhibo{
+			left: 0;
+			top:0;
+			z-index: 100;
+		}
+		#add{
+			margin: 50px 0 0 100px; 
+		}
+		#add-danmu{
+			padding: 10px;
+    		width: 360px;
+		}
+		#submit{
+			padding: 10px;
+		}
+	</style>
+	<link href="/static/css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.danmu.js"></script>
+
+</head>
+
+<body>
+	<img id="zhibo" src="/static/img/zhibo.png" />
+	<div id="danmu"> </div> 
+	<div id="add">
+		<input id="add-danmu" name="danmu" placeholder="输入要发送的弹幕。。。">
+		<button id="submit" onclick="javascript:;">发送</button>
+	</div>
+<script>
+
+$("#danmu").danmu({
+	left: 0, //区域的左边边界位置，相对于父div 
+	top: 0 , //区域的上边边界位置，相对于父div 
+	height: 380, //区域的高度 width: 640, //区域的宽度 
+	zindex :999999, //div的css样式zindex
+	speed:10000, //弹幕速度，飞过区域的毫秒数 
+	sumtime:900 , //弹幕运行总时间
+	danmuss:{}, //danmuss对象，运行时的弹幕内容 
+	default_font_color:"yellow", //弹幕默认字体颜色 
+	font_size_small:24, //小号弹幕的字体大小,注意此属性值只能是整数
+	font_size_big:28, //大号弹幕的字体大小 
+	opacity:"0.8", //弹幕默认透明度 
+	top_botton_danmu_time:4000 //顶端底端弹幕持续时间 
+});
+
+$('#danmu').danmu('danmu_start');
+window.danmu_time = 5;
+function addShow(){
+	var a_danmu={ "text":"打酱油的路人弹幕" , "color":"green" ,"size":"1","position":"0","time":window.danmu_time}; 
+	window.danmu_time=window.danmu_time+10;
+	$('#danmu').danmu("add_danmu", a_danmu);
+	
+}
+	
+
+window.setInterval(addShow,1000); 
+
+$("#submit").click(function(){
+	var text = $("#add-danmu").val();
+	if(text.trim()){
+		window.danmu_time=window.danmu_time+5;
+		var c_danmu={ "text":text, "color":"yellow" ,"size":"1","position":"0","time":danmu_time};	
+		$('#danmu').danmu("add_danmu", c_danmu);
+	}
+});
+</script>
+</body>
+</html>
