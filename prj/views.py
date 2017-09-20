@@ -2,6 +2,8 @@
 import tornado.web
 import tornado.gen
 from prj.decorator import *
+from prj.sql import SQL
+from prj.user.models import *
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -33,9 +35,19 @@ class LoveBookHandler(tornado.web.RequestHandler):
 
 
 class DanMuHandler(tornado.web.RequestHandler):
-    #520book
-    def get(self):
-        items = {
+    #弹幕测试
+    def __init__(self, application, request, **kwargs):
+        super(DanMuHandler, self).__init__(application, request, **kwargs)
+        self.sql = SQL()
 
+    def on_finish(self):
+        # close sql connection
+        self.sql.close()
+
+    def get(self):
+
+        user = self.sql.query(User).filter(User.name == 'huangzhen')
+        items = {
+            'user': user
         }
         self.render('../static/templates/danmu.html', items=items)
