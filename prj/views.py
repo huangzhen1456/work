@@ -51,3 +51,12 @@ class DanMuHandler(tornado.web.RequestHandler):
             'user': user
         }
         self.render('../static/templates/danmu.html', items=items)
+
+
+class ThanksHandler(tornado.web.RequestHandler):
+    #感恩节专题
+    def get(self):
+        items = {
+
+        }
+        self.render('../static/templates/thanks.html', items=items)

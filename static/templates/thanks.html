@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Thank you my sweet</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=1200, user-scalable=no" />
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="/static/css/default-thanks.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/snowfall.jquery.js"></script>
+
+</head>
+
+<body>
+	<img style="width: 100%;height: 45rem;" src="/static/img/thanks.jpg" />
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code" style="margin-top:2rem;color:#fff;width: 100%; text-align: center; font-size: 3.6rem;">
+				<span class="space"/><span class="comments">一年有365天，我只爱你4天</span><br />
+				<span class="space"/><span class="comments">春天，夏天，秋天，还有冬天。</span><br />
+				<br />
+				<span class="space"/><span class="comments">一个月里，我只爱你3天</span><br />
+				<span class="space"/><span class="comments">昨天，今天，和明天。</span><br />
+				<br />
+				<span class="space"/><span class="comments">一个星期，我只想你2天</span><br />
+				<span class="space"/><span class="comments">白天和黑天。</span><br />
+				<br />
+				<span class="space"/><span class="comments">而我只爱你一次，这一次是。。。</span><br />
+				<span class="space"/><span class="comments">一辈子。</span><br />
+				<br />
+				<span class="space"/><span class="comments">Thanks for my sweet.</span><br />
+				<span class="space"/><span class="comments">感谢上天让我遇到你~</span><br />
+				<span class="space"/><span class="comments">最后当然还要感谢老婆的爱~</span><br />
+				<span class="space"/><span class="comments">—— —— 兜兜~</span><br />
+				<br />
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+
+	(function(a) {
+    a.fn.typewriter = function() {
+        this.each(function() {
+            var d = a(this),
+            c = d.html(),
+            b = 0;
+            d.html("");
+            var e = setInterval(function() {
+                var f = c.substr(b, 1);
+                if (f == "<") {
+                    b = c.indexOf(">", b) + 1
+                } else {
+                    b++
+                }
+                d.html(c.substring(0, b) + (b & 1 ? "_": ""));
+                if (b >= c.length) {
+                    clearInterval(e)
+                }
+            },
+            125)
+        });
+        return this
+    }
+})(jQuery);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "浏览器版本过低，不支持HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			$(document).snowfall('clear');
+	        $(document).snowfall({
+	            image: "/static/img/huaban.png",
+	            flakeCount:50,
+	            minSize: 10,
+	            maxSize: 20
+	        });
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
