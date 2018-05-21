@@ -7,6 +7,7 @@ handlers = [
     (r"/lovebook", LoveBookHandler),
     (r"/danmu", DanMuHandler),
     (r"/thanks", ThanksHandler),
+    (r"/love520", Love520Handler),
 ]
 
 

@@ -60,3 +60,12 @@ class ThanksHandler(tornado.web.RequestHandler):
 
         }
         self.render('../static/templates/thanks.html', items=items)
+
+
+class Love520Handler(tornado.web.RequestHandler):
+    #520求婚专题
+    def get(self):
+        items = {
+
+        }
+        self.render('../static/templates/love520.html', items=items)
