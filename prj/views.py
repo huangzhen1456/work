@@ -5,6 +5,7 @@ from prj.decorator import *
 from prj.sql import SQL
 from prj.user.models import *
 import urllib.request
+import json
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -87,7 +88,8 @@ class WeiXinTokenHandler(tornado.web.RequestHandler):
         code = self.get_argument('code', '')
         url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxfb418f3903c83820&secret=8934e7d15453e95707ef794cf7b0159d&code='+code+'&grant_type=authorization_code'
         response = urllib.request.urlopen(url, timeout=500)
-        return self.finish(response)
+        data = json.loads(response)
+        return self.finish(data)
 
 
 class WeiXinHandler(tornado.web.RequestHandler):

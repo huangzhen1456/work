@@ -12,6 +12,8 @@
 
 <h1 id="bbb"></h1>
 
+<h1 id="ccc"></h1>
+
 <script>
 
 function getUrlParam(name){
@@ -34,7 +36,7 @@ if(code == null || code ===''){
 	$("#aaa").html(local);
 	$('#bbb').html(code);
 	$.post('/weixin/token', {'code': code}, function(data){
-		alert(data);
+		$('#ccc').html(data.openid);
 	});
 }
 
