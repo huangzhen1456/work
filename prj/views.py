@@ -69,3 +69,12 @@ class Love520Handler(tornado.web.RequestHandler):
 
         }
         self.render('../static/templates/love520.html', items=items)
+
+
+class WeiXinHandler(tornado.web.RequestHandler):
+    #微信试验
+    def get(self):
+        items = {
+
+        }
+        self.render('../static/templates/weixin.html', items=items)
