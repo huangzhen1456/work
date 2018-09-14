@@ -87,8 +87,10 @@ class WeiXinTokenHandler(tornado.web.RequestHandler):
     def post(self):
         code = self.get_argument('code', '')
         url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxfb418f3903c83820&secret=8934e7d15453e95707ef794cf7b0159d&code='+code+'&grant_type=authorization_code'
+        print(url)
         response = urllib.request.urlopen(url, timeout=500)
-        data = json.loads(response)
+        d = response.read().decode('utf-8')
+        data = json.loads(d)
         return self.finish(data)
 
 
