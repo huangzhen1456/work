@@ -9,6 +9,7 @@ handlers = [
     (r"/thanks", ThanksHandler),
     (r"/love520", Love520Handler),
     (r"/weixin", WeiXinHandler),
+    (r"/MP_verify_BZX94GyZpOPmjWqh.txt", WeiXinYanZhengHandler),
 ]
 
 
