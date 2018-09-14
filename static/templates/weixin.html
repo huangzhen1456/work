@@ -31,6 +31,8 @@ window.local = window.location.href;
 if(code == null || code ===''){
 	window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + encodeURIComponent(local) + '&response_type=code&scope=snsapi_base&state=1#wechat_redirect';
 }else{
+	$("#aaa").html(local);
+	$('#bbb').html(code);
 	$.post('/weixin/token', {'code': code}, function(data){
 		alert(data);
 	});
